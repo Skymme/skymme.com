@@ -461,6 +461,36 @@
   .chip-data { --chip: var(--skill-data); }
   .chip-human { --chip: var(--skill-human); }
 
+  /* ── Étapes numérotées ────────────────────────────────────── */
+  .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+  }
+  .step-n {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.65rem;
+    border: 1px solid rgb(81 136 255 / 0.3);
+    background: rgb(81 136 255 / 0.14);
+    color: var(--accent-fg);
+    font-size: 0.85rem;
+    font-weight: 800;
+  }
+  .step h3 {
+    font-size: 0.98rem;
+    font-weight: 700;
+  }
+  .step p {
+    margin-top: 0.3rem;
+    color: var(--fg-muted);
+    font-size: 0.86rem;
+    line-height: 1.6;
+  }
+
   /* ── Frise du parcours ────────────────────────────────────── */
   .timeline {
     position: relative;

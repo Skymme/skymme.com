@@ -54,7 +54,7 @@
 
   <body>
     <a
-      href="#projets"
+      href="#objectif"
       class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:rounded-lg focus:bg-surface focus:px-4 focus:py-2"
       >Aller au contenu</a
     >
@@ -68,6 +68,7 @@
         </a>
 
         <nav aria-label="Sections" class="hidden items-center gap-6 text-[0.84rem] md:flex">
+          <a class="nav-link" href="#objectif" data-nav>Objectif</a>
           <a class="nav-link" href="#projets" data-nav>Projets</a>
           <a class="nav-link" href="#parcours" data-nav>Parcours</a>
           <a class="nav-link" href="#competences" data-nav>Compétences</a>
@@ -138,8 +139,68 @@
         </div>
       </section>
 
+      <!-- ═══════════════════════ OBJECTIF ═══════════════════════ -->
+      <section id="objectif" class="band sect mt-12">
+        <div class="container-page">
+          <div class="sect-h reveal">
+            <span class="eyebrow">Ce que je recherche</span>
+            <h2>Data scientist, pour prédire ce que les données vont faire</h2>
+            <p>
+              Ma définition du métier : analyser le comportement des données pour prévoir leur évolution, et transformer
+              ces prévisions en décisions. C'est ce travail de prédiction que je cherche, pour un premier poste en CDI.
+            </p>
+          </div>
+
+          <ol class="grid gap-8 md:grid-cols-3">
+            <li class="step reveal">
+              <span class="step-n" aria-hidden="true">1</span>
+              <div>
+                <h3>Analyser</h3>
+                <p>Explorer les données pour comprendre leurs tendances, leurs cycles et leurs anomalies.</p>
+              </div>
+            </li>
+            <li class="step reveal">
+              <span class="step-n" aria-hidden="true">2</span>
+              <div>
+                <h3>Modéliser</h3>
+                <p>Construire et entraîner des modèles qui apprennent du passé, en Python avec PyTorch et scikit-learn.</p>
+              </div>
+            </li>
+            <li class="step reveal">
+              <span class="step-n" aria-hidden="true">3</span>
+              <div>
+                <h3>Prédire</h3>
+                <p>Anticiper le comportement futur des données, avec des résultats fiables et exploitables.</p>
+              </div>
+            </li>
+          </ol>
+
+          <div class="card card-featured reveal mt-10 flex flex-col gap-5 md:flex-row md:items-center">
+            <div class="flex items-center gap-4 md:flex-1">
+              <div class="ico ico-brand">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>
+              </div>
+              <div>
+                <h3 class="text-[1.02rem] font-bold">Les secteurs qui m'attirent</h3>
+                <p class="card-text mt-1">Et plus largement, tout domaine où savoir anticiper change les décisions.</p>
+              </div>
+            </div>
+            <ul class="chips" aria-label="Secteurs">
+              <li class="chip chip-dev inline-flex items-center gap-1.5">
+                <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V10M9.5 21V10M14.5 21V10M19 21V10"/><path d="M2 10 12 3l10 7z"/></svg>
+                Finance
+              </li>
+              <li class="chip chip-dev inline-flex items-center gap-1.5">
+                <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 15c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9a2.2 2.2 0 0 0-2.9-.1z"/><path d="m12 15-3-3a22 22 0 0 1 2-4A12.9 12.9 0 0 1 22 2c0 2.7-.8 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.6-3 2-4c1.6-1.1 5 0 5 0M12 15v5s3-.6 4-2c1.1-1.6 0-5 0-5"/></svg>
+                Spatial
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <!-- ═══════════════════════ PROJETS ═══════════════════════ -->
-      <section id="projets" class="band sect mt-12">
+      <section id="projets" class="sect">
         <div class="container-page">
           <div class="sect-h reveal">
             <span class="eyebrow">Réalisations</span>
@@ -285,8 +346,7 @@
             </article>
 
             <!-- Plus sur GitHub -->
-            <a
-              class="card card-hover reveal flex flex-wrap items-center gap-4 md:col-span-2 lg:col-span-3"
+            <a              class="card card-hover reveal flex flex-wrap items-center gap-4 md:col-span-2 lg:col-span-3"
               href="https://github.com/Skymme"
               target="_blank"
               rel="noopener"
@@ -305,7 +365,7 @@
       </section>
 
       <!-- ═══════════════════════ PARCOURS ═══════════════════════ -->
-      <section id="parcours" class="sect">
+      <section id="parcours" class="band sect">
         <div class="container-page">
           <div class="sect-h reveal">
             <span class="eyebrow">Parcours</span>
@@ -460,7 +520,7 @@
       </section>
 
       <!-- ═══════════════════════ COMPÉTENCES ═══════════════════════ -->
-      <section id="competences" class="band sect">
+      <section id="competences" class="sect">
         <div class="container-page">
           <div class="sect-h reveal">
             <span class="eyebrow">Compétences</span>
@@ -534,7 +594,7 @@
       </section>
 
       <!-- ═══════════════════════ CV ═══════════════════════ -->
-      <section id="cv" class="sect">
+      <section id="cv" class="band sect">
         <div class="container-page">
           <div class="sect-h reveal">
             <span class="eyebrow">CV</span>
@@ -567,7 +627,7 @@
       </section>
 
       <!-- ═══════════════════════ CONTACT ═══════════════════════ -->
-      <section id="contact" class="band sect">
+      <section id="contact" class="sect">
         <div class="container-page">
           <div class="sect-h reveal">
             <span class="eyebrow">Contact</span>
@@ -615,6 +675,7 @@
         <div>
           <h4>Sections</h4>
           <ul class="grid gap-2">
+            <li><a href="#objectif">Objectif</a></li>
             <li><a href="#projets">Projets</a></li>
             <li><a href="#parcours">Parcours</a></li>
             <li><a href="#competences">Compétences</a></li>
