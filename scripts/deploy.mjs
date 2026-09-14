@@ -44,7 +44,10 @@ function pinHostKey(host) {
   if (existsSync(KNOWN_HOSTS) && readFileSync(KNOWN_HOSTS, 'utf8').includes(host)) return
 
   console.log(`Première connexion : relevé de la clé SSH de ${host}...`)
-  const keys = execFileSync('ssh-keyscan', ['-T', '10', host], {
+  // Clé RSA uniquement : le curl livré avec Git pour Windows (libssh2 sur
+  // WinCNG) ne sait pas vérifier une clé ed25519 et échoue avec « curl 79 »
+  // dès qu'une telle clé figure dans le fichier.
+  const keys = execFileSync('ssh-keyscan', ['-T', '10', '-t', 'rsa', host], {
     encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'],
   })
   if (!keys.trim()) {
