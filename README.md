@@ -13,8 +13,11 @@ l'apparition des blocs au défilement et la copie de l'adresse e-mail.
 - [Vite](https://vite.dev) + TypeScript, sans framework
 - [Tailwind CSS 4](https://tailwindcss.com), avec des jetons sémantiques dans
   `src/style.css`
-- Charte inspirée de Meeply : sombre par défaut, accent bleu électrique, police
-  système, aucune police web à charger
+- Charte inspirée de la démo Melodify (uupm.cc) : fond sombre à halos émeraude
+  et violet, titres Outfit et texte Rubik (auto-hébergés via Fontsource),
+  thème clair complet. Détails dans `DESIGN.md`
+- Composants Magic UI (bascule de thème, compteurs, bordure lumineuse, défilé…)
+  portés en TypeScript et CSS natifs, sans React
 
 ## Développer
 

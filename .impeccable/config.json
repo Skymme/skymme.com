@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-14T17:13:04.212Z",
+        "reason": "Claude triage: static scan reads 16px for every role because sizes live in CSS classes; headless captures show .h1 ~70px and .h2 ~50px against 16px body"
+      }
+    ]
+  }
+}

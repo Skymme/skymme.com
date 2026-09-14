@@ -15,3 +15,8 @@ Thumbs.db
 # Réglages d'outils, propres à chaque poste.
 .claude/
 .idea/
+
+# Captures et caches de travail d'Impeccable, régénérables.
+.impeccable/review/
+.impeccable/questions/
+.impeccable/hook.cache.json
