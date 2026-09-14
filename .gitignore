@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.vite/
+*.local
+.DS_Store
+Thumbs.db
+
+# Identifiants SFTP de mise en ligne : jamais dans le dépôt.
+.env
+.env.*
+
+# Clé SSH du serveur, relevée au premier envoi.
+.sftp_known_hosts
+
+# Réglages d'outils, propres à chaque poste.
+.claude/
+.idea/

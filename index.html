@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jade Vaillant — Ingénieure logicielle · Full Stack &amp; Data</title>
+    <meta
+      name="description"
+      content="Jade Vaillant, ingénieure informatique diplômée de l'INSA de Rennes : développement web full stack, data science et IA. Projets, parcours et CV."
+    />
+    <meta name="theme-color" content="#0a0d12" />
+    <link rel="canonical" href="https://skymme.com/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:url" content="https://skymme.com/" />
+    <meta property="og:title" content="Jade Vaillant — Ingénieure logicielle · Full Stack & Data" />
+    <meta
+      property="og:description"
+      content="Ingénieure informatique diplômée de l'INSA de Rennes : développement web full stack, data science et IA."
+    />
+
+    <!-- Thème posé avant le premier rendu, pour éviter un flash de la mauvaise couleur. -->
+    <script>
+      (function () {
+        var root = document.documentElement
+        root.classList.add('js')
+        try {
+          var saved = localStorage.getItem('theme')
+          if (saved === 'light' || saved === 'dark') {
+            root.dataset.theme = saved
+            return
+          }
+        } catch (e) {}
+        root.dataset.theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+      })()
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jade Vaillant",
+        "jobTitle": "Ingénieure logicielle — Full Stack et Data",
+        "url": "https://skymme.com/",
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "INSA Rennes" },
+        "sameAs": ["https://www.linkedin.com/in/vaillant-jade", "https://github.com/Skymme"]
+      }
+    </script>
+
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+
+  <body>
+    <a
+      href="#projets"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:rounded-lg focus:bg-surface focus:px-4 focus:py-2"
+      >Aller au contenu</a
+    >
+
+    <!-- ═══════════════════════ NAVIGATION ═══════════════════════ -->
+    <header class="nav">
+      <div class="container-page flex h-16 items-center gap-7">
+        <a href="#accueil" class="flex items-center gap-2.5 text-[0.95rem] font-bold">
+          <span class="brand-mark" aria-hidden="true">JV</span>
+          Jade Vaillant
+        </a>
+
+        <nav aria-label="Sections" class="hidden items-center gap-6 text-[0.84rem] md:flex">
+          <a class="nav-link" href="#projets" data-nav>Projets</a>
+          <a class="nav-link" href="#parcours" data-nav>Parcours</a>
+          <a class="nav-link" href="#competences" data-nav>Compétences</a>
+          <a class="nav-link" href="#contact" data-nav>Contact</a>
+        </nav>
+
+        <div class="ml-auto flex items-center gap-2">
+          <button type="button" class="icon-btn" data-theme-toggle aria-label="Passer en thème clair">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          </button>
+          <a class="btn btn-primary btn-sm" href="#cv">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></svg>
+            <span>CV</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ═══════════════════════ ACCUEIL ═══════════════════════ -->
+      <section id="accueil" class="container-page pt-14 pb-4 text-center md:pt-20">
+        <span class="eyebrow reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>
+          Ingénieure informatique · INSA Rennes
+        </span>
+
+        <h1 class="hero-title reveal">Ingénieure logicielle, <em class="grad-text">du code à la donnée</em></h1>
+
+        <p class="hero-sub reveal">
+          Diplômée de l'INSA de Rennes, je conçois des applications web full stack et des modèles de Machine Learning en
+          Python. J'utilise les LLM au quotidien, en comprenant leur fonctionnement et leurs limites.
+        </p>
+
+        <div class="reveal flex flex-wrap items-center justify-center gap-3">
+          <a class="btn btn-primary btn-lg" href="#projets">Voir mes projets</a>
+          <a class="btn btn-ghost btn-lg" href="#cv">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></svg>
+            Télécharger mon CV
+          </a>
+        </div>
+
+        <p class="hero-note reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v6c0 4.4 3 8 7 9 4-1 7-4.6 7-9V6z"/><path d="m9 12 2 2 4-4"/></svg>
+          Disponible dès que possible · premier poste en CDI
+        </p>
+
+        <div class="shot reveal" aria-label="Profil résumé au format JSON">
+          <div class="shot-bar">
+            <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span>profil.json</span>
+          </div>
+          <pre class="code"><code><span class="tok-p">{</span>
+  <span class="tok-k">"nom"</span><span class="tok-p">:</span> <span class="tok-s">"Jade Vaillant"</span><span class="tok-p">,</span>
+  <span class="tok-k">"diplome"</span><span class="tok-p">:</span> <span class="tok-s">"Ingénieure informatique · INSA Rennes"</span><span class="tok-p">,</span>
+  <span class="tok-k">"profils"</span><span class="tok-p">: [</span><span class="tok-s">"Full Stack"</span><span class="tok-p">,</span> <span class="tok-s">"Data Scientist"</span><span class="tok-p">],</span>
+  <span class="tok-k">"stack"</span><span class="tok-p">: [</span><span class="tok-s">"Angular"</span><span class="tok-p">,</span> <span class="tok-s">"Spring Boot"</span><span class="tok-p">,</span> <span class="tok-s">"Python"</span><span class="tok-p">,</span> <span class="tok-s">"PyTorch"</span><span class="tok-p">],</span>
+  <span class="tok-k">"ia"</span><span class="tok-p">:</span> <span class="tok-s">"LLM au quotidien, Machine & Deep Learning"</span><span class="tok-p">,</span>
+  <span class="tok-k">"anglais"</span><span class="tok-p">:</span> <span class="tok-s">"TOEIC 940 / 990"</span><span class="tok-p">,</span>
+  <span class="tok-k">"disponibilite"</span><span class="tok-p">:</span> <span class="tok-s">"dès que possible"</span>
+<span class="tok-p">}</span></code></pre>
+        </div>
+
+        <div class="reveal mx-auto mt-12 grid max-w-3xl grid-cols-1 gap-6 sm:grid-cols-3">
+          <div class="kpi"><b class="grad-text">6 stages</b><small>en entreprise, du web à la data</small></div>
+          <div class="kpi"><b class="grad-text">940 / 990</b><small>au TOEIC</small></div>
+          <div class="kpi"><b class="grad-text">6 mois</b><small>d'échange aux États-Unis (RIT)</small></div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════ PROJETS ═══════════════════════ -->
+      <section id="projets" class="band sect mt-12">
+        <div class="container-page">
+          <div class="sect-h reveal">
+            <span class="eyebrow">Réalisations</span>
+            <h2>Des projets menés jusqu'au bout</h2>
+            <p>Des applications en ligne, un journal imprimable, un moteur de recherche et un langage de programmation : ce que je construis quand on me laisse la main.</p>
+          </div>
+
+          <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Meeply -->
+            <article class="card card-hover card-featured reveal flex flex-col md:col-span-2">
+              <div class="flex items-start justify-between gap-4">
+                <div class="ico ico-brand">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="8.5" cy="8.5" r="1.3" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.3" fill="currentColor" stroke="none"/><circle cx="15.5" cy="15.5" r="1.3" fill="currentColor" stroke="none"/></svg>
+                </div>
+                <span class="tagline">Application web &amp; mobile</span>
+              </div>
+              <h3 class="card-title text-[1.2rem]">Meeply</h3>
+              <p class="card-text max-w-xl">
+                Le carnet de bord des soirées jeux de société : ludothèque, parties, scores et recommandations, seul, en
+                famille ou entre amis. Une seule base de code pour le web et le mobile, adossée à une API qui porte
+                toutes les règles métier.
+              </p>
+              <ul class="chips mt-4" aria-label="Technologies">
+                <li class="chip chip-neutral">React 19</li>
+                <li class="chip chip-neutral">Tailwind 4</li>
+                <li class="chip chip-neutral">NestJS</li>
+                <li class="chip chip-neutral">PostgreSQL</li>
+                <li class="chip chip-neutral">Prisma</li>
+                <li class="chip chip-neutral">Capacitor</li>
+              </ul>
+              <div class="mt-auto flex flex-wrap gap-5 pt-5">
+                <a class="link-arrow" href="https://meeply.tv" target="_blank" rel="noopener">
+                  Voir meeply.tv
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Le Mamichat -->
+            <article class="card card-hover reveal flex flex-col">
+              <div class="flex items-start justify-between gap-4">
+                <div class="ico">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h13v14a2 2 0 0 0 2 2H6a2 2 0 0 1-2-2z"/><path d="M17 9h3v10a2 2 0 0 1-2 2"/><path d="M8 9h5M8 13h5M8 17h3"/></svg>
+                </div>
+                <span class="tagline">Journal interactif</span>
+              </div>
+              <h3 class="card-title">Le Mamichat</h3>
+              <p class="card-text">
+                Un journal de vingt-deux pages offert pour un 80<sup>e</sup> anniversaire : tourne-page, mots croisés et
+                mise en page imprimable faits maison, sans aucune dépendance d'exécution.
+              </p>
+              <ul class="chips mt-4" aria-label="Technologies">
+                <li class="chip chip-neutral">TypeScript</li>
+                <li class="chip chip-neutral">Vite</li>
+                <li class="chip chip-neutral">CSS print</li>
+              </ul>
+              <div class="mt-auto flex flex-wrap gap-5 pt-5">
+                <a class="link-arrow" href="https://skymme.com/le-mamichat/" target="_blank" rel="noopener">
+                  Lire le journal
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                </a>
+                <a class="link-arrow" href="https://github.com/Skymme/Le-Mamichat" target="_blank" rel="noopener">Code</a>
+              </div>
+            </article>
+
+            <!-- Little Search Engine -->
+            <article class="card card-hover reveal flex flex-col">
+              <div class="flex items-start justify-between gap-4">
+                <div class="ico">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                </div>
+                <span class="tagline">Data · NLP</span>
+              </div>
+              <h3 class="card-title">Little Search Engine</h3>
+              <p class="card-text">
+                Un moteur de recherche sur le corpus CISI : nettoyage et lemmatisation, pondération TF-IDF, puis
+                classement des documents par similarité cosinus, distance euclidienne et une norme personnalisée.
+              </p>
+              <ul class="chips mt-4" aria-label="Technologies">
+                <li class="chip chip-neutral">Python</li>
+                <li class="chip chip-neutral">Jupyter</li>
+                <li class="chip chip-neutral">TF-IDF</li>
+              </ul>
+              <div class="mt-auto flex flex-wrap gap-5 pt-5">
+                <a class="link-arrow" href="https://github.com/Skymme/Little-Search-Engine" target="_blank" rel="noopener">
+                  Voir le code
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Taquin (Web2) -->
+            <article class="card card-hover reveal flex flex-col">
+              <div class="flex items-start justify-between gap-4">
+                <div class="ico">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg>
+                </div>
+                <span class="tagline">Full Stack · DevOps</span>
+              </div>
+              <h3 class="card-title">Jeu de taquin</h3>
+              <p class="card-text">
+                Une application web Angular et Spring Boot, conteneurisée avec Docker Compose puis déployée sur
+                Kubernetes (MicroK8s) derrière un Ingress.
+              </p>
+              <ul class="chips mt-4" aria-label="Technologies">
+                <li class="chip chip-neutral">Angular</li>
+                <li class="chip chip-neutral">Spring Boot</li>
+                <li class="chip chip-neutral">Docker</li>
+                <li class="chip chip-neutral">Kubernetes</li>
+              </ul>
+              <div class="mt-auto flex flex-wrap gap-5 pt-5">
+                <a class="link-arrow" href="https://github.com/Skymme/15-puzzle" target="_blank" rel="noopener">
+                  Voir le code
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- FourchLang -->
+            <article class="card card-hover reveal flex flex-col">
+              <div class="flex items-start justify-between gap-4">
+                <div class="ico">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-4 3 4 3"/><path d="m16 9 4 3-4 3"/><path d="m14 5-4 14"/></svg>
+                </div>
+                <span class="tagline">Langage dédié</span>
+              </div>
+              <h3 class="card-title">FourchLang</h3>
+              <p class="card-text">
+                Un langage pour décrire des jeux de type snake sur une grille — joueurs, objets, règles de fin — compilé
+                vers un jeu exécutable ou une représentation ASCII et graphique.
+              </p>
+              <ul class="chips mt-4" aria-label="Technologies">
+                <li class="chip chip-neutral">Langium</li>
+                <li class="chip chip-neutral">TypeScript</li>
+                <li class="chip chip-neutral">Node.js</li>
+              </ul>
+              <div class="mt-auto flex flex-wrap gap-5 pt-5">
+                <a class="link-arrow" href="https://github.com/Skymme/Snack-Game" target="_blank" rel="noopener">
+                  Voir le code
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Plus sur GitHub -->
+            <a
+              class="card card-hover reveal flex flex-wrap items-center gap-4 md:col-span-2 lg:col-span-3"
+              href="https://github.com/Skymme"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+              </div>
+              <div class="min-w-0 flex-1">
+                <p class="font-semibold">Et d'autres projets sur GitHub</p>
+                <p class="text-[0.84rem] text-fg-muted">Réalité virtuelle en C#, applications Java, projets d'école…</p>
+              </div>
+              <span class="link-arrow">github.com/Skymme</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════ PARCOURS ═══════════════════════ -->
+      <section id="parcours" class="sect">
+        <div class="container-page">
+          <div class="sect-h reveal">
+            <span class="eyebrow">Parcours</span>
+            <h2>Six stages et un diplôme d'ingénieure</h2>
+            <p>Du développement web à l'analyse de données, en passant par la gestion de projet et le terrain.</p>
+          </div>
+
+          <div class="grid gap-10 lg:grid-cols-[1.55fr_1fr]">
+            <!-- Expériences -->
+            <div>
+              <h3 class="col-title reveal">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>
+                Expériences
+              </h3>
+              <ol class="timeline">
+                <li class="tl-item is-current reveal">
+                  <div class="card">
+                    <p class="tl-role">Stage de développement Full Stack</p>
+                    <p class="tl-org">Sopra Steria</p>
+                    <p class="tl-meta">Rennes · mars 2026 – sept. 2026</p>
+                    <ul class="bullets">
+                      <li>Conception et évolution de fonctionnalités d'une application d'envergure en Angular 20 et Spring Boot.</li>
+                      <li>Nouvelles tables avec Liquibase et développement des couches d'accès aux données.</li>
+                      <li>Équipe Scrum : livraisons itératives, tests automatisés et déploiement continu.</li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="tl-item reveal">
+                  <div class="card">
+                    <p class="tl-role">Stage en analyse de données</p>
+                    <p class="tl-org">Sopra Steria</p>
+                    <p class="tl-meta">Rennes · juin 2025 – juil. 2025</p>
+                    <ul class="bullets">
+                      <li>Conception et optimisation de pipelines de données (flux ETL) avec Apache NiFi.</li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="tl-item reveal">
+                  <div class="card">
+                    <p class="tl-role">Stage de développeur Full Stack</p>
+                    <p class="tl-org">6TM</p>
+                    <p class="tl-meta">Rennes · juin 2024 – sept. 2024</p>
+                    <ul class="bullets">
+                      <li>Applications web et logicielles en C#, JavaScript et SQL.</li>
+                      <li>Optimisation du code et des requêtes pour améliorer les temps de réponse et l'UX.</li>
+                      <li>Participation active à la revue de code.</li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="tl-item reveal">
+                  <div class="card">
+                    <p class="tl-role">Stage de développeur Frontend</p>
+                    <p class="tl-org">Infotel</p>
+                    <p class="tl-meta">Rennes · juil. 2023 – sept. 2023</p>
+                    <ul class="bullets">
+                      <li>Interfaces fluides, réactives et multiplateformes avec Flutter.</li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="tl-item reveal">
+                  <div class="card">
+                    <p class="tl-role">Stage d'assistant chef de projet</p>
+                    <p class="tl-org">Robot For Site, filiale de Vinci</p>
+                    <p class="tl-meta">Vélizy-Villacoublay · févr. 2022 – mai 2022</p>
+                    <ul class="bullets">
+                      <li>Analyse des données opérationnelles et des temps d'exécution pour planifier les tâches.</li>
+                      <li>Analyse des risques liés à l'intégration de robots sur les chantiers.</li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="tl-item reveal">
+                  <div class="card">
+                    <p class="tl-role">Assistant qualifié des services hospitaliers</p>
+                    <p class="tl-org">Hôpital du Croisic</p>
+                    <p class="tl-meta">Le Croisic · août 2021 – sept. 2021</p>
+                  </div>
+                </li>
+                <li class="tl-item reveal">
+                  <div class="card">
+                    <p class="tl-role">Stage technicien</p>
+                    <p class="tl-org">Airbus</p>
+                    <p class="tl-meta">Colomiers · mai 2021 – juin 2021</p>
+                    <ul class="bullets">
+                      <li>Création de supports et animation d'ateliers sur l'impression et la modélisation 3D.</li>
+                    </ul>
+                  </div>
+                </li>
+              </ol>
+            </div>
+
+            <!-- Formation + langues -->
+            <div>
+              <h3 class="col-title reveal">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>
+                Formation
+              </h3>
+              <ol class="timeline">
+                <li class="tl-item is-current reveal">
+                  <div class="card">
+                    <p class="tl-role">Diplôme d'ingénieur, spécialité informatique</p>
+                    <p class="tl-org">INSA Rennes</p>
+                    <p class="tl-meta">Rennes · 2022 – 2026</p>
+                    <ul class="bullets">
+                      <li>Spécialisation Data et IA : projets de Machine Learning et de Deep Learning (PyTorch, scikit-learn).</li>
+                      <li>Semestre d'échange de six mois au Rochester Institute of Technology, aux États-Unis.</li>
+                      <li>Entrepreneuriat et « 48h de l'innovation ».</li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="tl-item reveal">
+                  <div class="card">
+                    <p class="tl-role">Classe préparatoire intégrée</p>
+                    <p class="tl-org">ICAM</p>
+                    <p class="tl-meta">Toulouse · 2020 – 2022</p>
+                    <ul class="bullets">
+                      <li>Conseil des alumni, bureau de recrutement et club international.</li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="tl-item reveal">
+                  <div class="card">
+                    <p class="tl-role">Baccalauréat scientifique, spécialité mathématiques</p>
+                    <p class="tl-org">Lycée Victor Hugo</p>
+                    <p class="tl-meta">Colomiers · 2020</p>
+                  </div>
+                </li>
+              </ol>
+
+              <h3 class="col-title reveal mt-10">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18"/></svg>
+                Langues
+              </h3>
+              <div class="card reveal">
+                <dl class="grid gap-3 text-[0.88rem]">
+                  <div class="flex items-center justify-between gap-4">
+                    <dt class="font-semibold">Français</dt>
+                    <dd class="text-fg-muted">Langue maternelle</dd>
+                  </div>
+                  <div class="flex items-center justify-between gap-4">
+                    <dt class="font-semibold">Anglais</dt>
+                    <dd class="flex items-center gap-2 text-fg-muted">B2 <span class="chip chip-dev">TOEIC 940 / 990</span></dd>
+                  </div>
+                  <div class="flex items-center justify-between gap-4">
+                    <dt class="font-semibold">Japonais</dt>
+                    <dd class="text-fg-muted">A1</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════ COMPÉTENCES ═══════════════════════ -->
+      <section id="competences" class="band sect">
+        <div class="container-page">
+          <div class="sect-h reveal">
+            <span class="eyebrow">Compétences</span>
+            <h2>Une double culture : développement et data</h2>
+            <p>Les outils avec lesquels je travaille, regroupés comme sur mon CV.</p>
+          </div>
+
+          <div class="card card-featured reveal mb-4 flex flex-col gap-4 sm:flex-row sm:items-start">
+            <div class="ico ico-brand">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 3v4M17 5h4"/></svg>
+            </div>
+            <div>
+              <h3 class="text-[1.02rem] font-bold">L'IA, un outil que je maîtrise</h3>
+              <p class="card-text">
+                J'utilise les LLM au quotidien en comprenant leur fonctionnement et leurs limites, et j'ai conçu et
+                entraîné des modèles de Machine Learning et de Deep Learning en Python (PyTorch, scikit-learn) pendant
+                ma spécialisation Data et IA à l'INSA.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid gap-4 md:grid-cols-3">
+            <div class="card reveal">
+              <h3 class="col-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+                Data &amp; IA
+              </h3>
+              <ul class="chips">
+                <li class="chip chip-data">Python</li>
+                <li class="chip chip-data">R</li>
+                <li class="chip chip-data">SQL</li>
+                <li class="chip chip-data">Analyse de données</li>
+                <li class="chip chip-data">Machine Learning</li>
+                <li class="chip chip-data">Deep Learning</li>
+                <li class="chip chip-data">PyTorch</li>
+                <li class="chip chip-data">scikit-learn</li>
+                <li class="chip chip-data">LLM</li>
+                <li class="chip chip-data">Apache NiFi (ETL)</li>
+                <li class="chip chip-data">Kubernetes</li>
+              </ul>
+            </div>
+            <div class="card reveal">
+              <h3 class="col-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg>
+                Développement &amp; outils
+              </h3>
+              <ul class="chips">
+                <li class="chip chip-dev">Full Stack</li>
+                <li class="chip chip-dev">Angular</li>
+                <li class="chip chip-dev">Spring Boot</li>
+                <li class="chip chip-dev">Flutter</li>
+                <li class="chip chip-dev">C#</li>
+                <li class="chip chip-dev">Git</li>
+                <li class="chip chip-dev">Liquibase</li>
+              </ul>
+            </div>
+            <div class="card reveal">
+              <h3 class="col-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.2"/><path d="M16 20a5 5 0 0 1 5-5"/></svg>
+                Compétences humaines
+              </h3>
+              <ul class="chips">
+                <li class="chip chip-human">Méthodologie Agile</li>
+                <li class="chip chip-human">Travail d'équipe</li>
+                <li class="chip chip-human">Gestion de projet</li>
+                <li class="chip chip-human">Rigueur</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════ CV ═══════════════════════ -->
+      <section id="cv" class="sect">
+        <div class="container-page">
+          <div class="sect-h reveal">
+            <span class="eyebrow">CV</span>
+            <h2>Mon CV, en deux versions</h2>
+            <p>
+              Selon le poste : Full Stack ou Data Scientist. Chacun existe aussi dans une mise en page pensée pour les
+              logiciels de recrutement (ATS).
+            </p>
+          </div>
+
+          <div class="mx-auto grid max-w-3xl gap-4 md:grid-cols-2">
+            <div class="card card-hover reveal flex flex-col">
+              <div class="flex items-start justify-between gap-4">
+                <div class="ico">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg>
+                </div>
+                <span class="tagline">PDF · A4</span>
+              </div>
+              <h3 class="card-title">CV Full Stack</h3>
+              <p class="card-text">Développement web Angular et Spring Boot, du front à la base de données.</p>
+              <div class="mt-auto flex flex-wrap items-center gap-4 pt-5">
+                <a class="btn btn-primary" href="cv/CV-Jade-Vaillant-FullStack.pdf" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></svg>
+                  Télécharger
+                </a>
+                <a class="link-arrow" href="cv/CV-Jade-Vaillant-FullStack-ATS.pdf" target="_blank" rel="noopener">Version ATS</a>
+              </div>
+            </div>
+            <div class="card card-hover reveal flex flex-col">
+              <div class="flex items-start justify-between gap-4">
+                <div class="ico">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+                </div>
+                <span class="tagline">PDF · A4</span>
+              </div>
+              <h3 class="card-title">CV Data Scientist</h3>
+              <p class="card-text">Machine Learning, Deep Learning et pipelines de données, avec une vraie culture logicielle.</p>
+              <div class="mt-auto flex flex-wrap items-center gap-4 pt-5">
+                <a class="btn btn-primary" href="cv/CV-Jade-Vaillant-Data-Scientist.pdf" target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 20h16"/></svg>
+                  Télécharger
+                </a>
+                <a class="link-arrow" href="cv/CV-Jade-Vaillant-Data-Scientist-ATS.pdf" target="_blank" rel="noopener">Version ATS</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════ CONTACT ═══════════════════════ -->
+      <section id="contact" class="band sect">
+        <div class="container-page">
+          <div class="sect-h reveal">
+            <span class="eyebrow">Contact</span>
+            <h2>Discutons de votre équipe</h2>
+            <p>Je suis disponible dès que possible pour un premier poste en CDI. Le plus simple : un e-mail.</p>
+          </div>
+
+          <div class="reveal flex flex-wrap items-center justify-center gap-3">
+            <a class="btn btn-primary btn-lg" href="mailto:vaillant.jade@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              vaillant.jade@gmail.com
+            </a>
+            <button type="button" class="btn btn-ghost btn-lg" data-copy="vaillant.jade@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <span data-copy-label>Copier l'adresse</span>
+            </button>
+          </div>
+
+          <div class="reveal mt-6 flex flex-wrap items-center justify-center gap-6">
+            <a class="link-arrow" href="https://www.linkedin.com/in/vaillant-jade" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
+            <a class="link-arrow" href="https://github.com/Skymme" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ═══════════════════════ PIED DE PAGE ═══════════════════════ -->
+    <footer class="foot">
+      <div class="container-page grid gap-8 py-10 md:grid-cols-[1.6fr_1fr_1fr_1fr]">
+        <div>
+          <a href="#accueil" class="flex items-center gap-2.5 text-[0.95rem] font-bold">
+            <span class="brand-mark" aria-hidden="true">JV</span>
+            Jade Vaillant
+          </a>
+          <p class="mt-3 max-w-xs text-[0.8rem] leading-relaxed text-fg-subtle">
+            Ingénieure informatique diplômée de l'INSA de Rennes. Développement web full stack, data science et IA.
+          </p>
+        </div>
+        <div>
+          <h4>Sections</h4>
+          <ul class="grid gap-2">
+            <li><a href="#projets">Projets</a></li>
+            <li><a href="#parcours">Parcours</a></li>
+            <li><a href="#competences">Compétences</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Projets</h4>
+          <ul class="grid gap-2">
+            <li><a href="https://meeply.tv" target="_blank" rel="noopener">Meeply</a></li>
+            <li><a href="https://skymme.com/le-mamichat/" target="_blank" rel="noopener">Le Mamichat</a></li>
+            <li><a href="https://github.com/Skymme" target="_blank" rel="noopener">Tous sur GitHub</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Liens</h4>
+          <ul class="grid gap-2">
+            <li><a href="https://www.linkedin.com/in/vaillant-jade" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/Skymme" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="#cv">Télécharger le CV</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container-page border-t border-border py-5 text-[0.72rem] text-fg-subtle">
+        © <span data-year>2026</span> Jade Vaillant · Site statique, sans cookie ni traceur · Hébergé par OVH SAS, 2 rue
+        Kellermann, 59100 Roubaix
+      </div>
+    </footer>
+  </body>
+</html>
