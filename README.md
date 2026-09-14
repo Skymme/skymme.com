@@ -67,3 +67,15 @@ Le contenu texte (expériences, compétences) est, lui, recopié à la main dans
 Le script envoie en SFTP et **ne supprime jamais rien** côté serveur. Il refuse
 aussi de toucher `www/le-mamichat/`. Un fichier retiré du site reste donc en
 ligne tant qu'on ne l'efface pas à la main.
+
+### Deux pièges déjà rencontrés
+
+- **`curl 79 … ssh-ed25519 failed`** : le curl de Git pour Windows ne sait pas
+  vérifier une clé de serveur ed25519. Le script n'épingle plus que la clé RSA ;
+  si un ancien `.sftp_known_hosts` contient une ligne `ssh-ed25519`, supprimez
+  le fichier pour qu'il soit relevé à nouveau.
+- **`curl 78` sur `index.html`** : sur un hébergement neuf, OVH place dans
+  `www/` un `index.html` qui est un lien vers sa page « Site en construction »,
+  hors de votre espace. Il a été renommé en `www/index-ovh-welcome.html` lors
+  du premier envoi (rien n'a été supprimé) ; pour retrouver la page OVH, il
+  suffit de le renommer à nouveau en `index.html`.
