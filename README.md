@@ -28,11 +28,12 @@ npm run preview   # sert dist/ pour vérifier le build
 ## Mettre à jour le CV
 
 Les PDF vivent dans `public/cv/` et sont générés par le dépôt
-[Curriculum-Vitae](https://github.com/Skymme/Curriculum-Vitae). Après un
-`./build.sh` là-bas, depuis ce dépôt :
+[Curriculum-Vitae](https://github.com/Skymme/Curriculum-Vitae). Seule la
+version **Data Scientist** est publiée (mise en page classique et ATS) : un seul
+CV en ligne. Après un `./build.sh` là-bas, depuis ce dépôt :
 
 ```sh
-npm run sync-cv   # recopie ../Curriculum-Vitae/pdf/*.pdf dans public/cv/
+npm run sync-cv   # recopie les deux PDF Data Scientist dans public/cv/
 ```
 
 Le contenu texte (expériences, compétences) est, lui, recopié à la main dans
