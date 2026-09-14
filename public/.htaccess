@@ -1,0 +1,13 @@
+# Les PDF du CV sont remplacés sans changer de nom. Sans cette règle, OVH les
+# sert avec « max-age=3600 » et un navigateur peut afficher l'ancienne version
+# pendant une heure. Avec « no-cache », il redemande au serveur si le fichier a
+# changé avant de réutiliser sa copie (réponse 304 sinon).
+#
+# Ce fichier s'applique à tout www/, Le Mamichat compris : la règle ne vise que
+# les PDF, et le bloc IfModule évite une erreur 500 si mod_headers est absent.
+<IfModule mod_headers.c>
+  <FilesMatch "\.pdf$">
+    Header set Cache-Control "no-cache"
+    Header unset Expires
+  </FilesMatch>
+</IfModule>

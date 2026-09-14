@@ -79,3 +79,12 @@ ligne tant qu'on ne l'efface pas à la main.
   hors de votre espace. Il a été renommé en `www/index-ovh-welcome.html` lors
   du premier envoi (rien n'a été supprimé) ; pour retrouver la page OVH, il
   suffit de le renommer à nouveau en `index.html`.
+
+### Cache des PDF
+
+OVH sert les fichiers avec `Cache-Control: max-age=3600` : après une mise à
+jour du CV, un navigateur pouvait afficher l'ancien PDF pendant une heure.
+`public/.htaccess`, déposé à la racine `www/`, force `no-cache` sur les PDF
+seulement : le navigateur revalide auprès du serveur avant de réutiliser sa
+copie. La règle est dans un bloc `IfModule` et ne peut donc pas casser le site
+ni Le Mamichat si le module Apache manquait.
