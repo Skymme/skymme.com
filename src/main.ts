@@ -136,6 +136,28 @@ const spy = new IntersectionObserver(
 )
 sections.forEach((section) => spy.observe(section))
 
+// ── Visionneuse de document ───────────────────────────────────────
+// Les attributs command/commandfor ouvrent et ferment le dialogue nativement ;
+// le script prend le relais là où ils ne sont pas pris en charge, ferme au
+// clic sur le fond et n'offre pas l'enregistrement de l'image au clic droit.
+const supportsCommands = 'command' in HTMLButtonElement.prototype
+
+document.querySelectorAll<HTMLButtonElement>('[data-dialog-open]').forEach((opener) => {
+  const dialog = document.getElementById(opener.dataset.dialogOpen ?? '')
+  if (!(dialog instanceof HTMLDialogElement)) return
+
+  if (!supportsCommands) {
+    opener.addEventListener('click', () => dialog.showModal())
+    dialog.querySelectorAll<HTMLButtonElement>('[data-dialog-close]').forEach((closer) => {
+      closer.addEventListener('click', () => dialog.close())
+    })
+  }
+  dialog.addEventListener('click', (event) => {
+    if (event.target === dialog) dialog.close()
+  })
+  dialog.querySelector('img')?.addEventListener('contextmenu', (event) => event.preventDefault())
+})
+
 // ── Copie de l'adresse e-mail ─────────────────────────────────────
 document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((button) => {
   const label = button.querySelector<HTMLElement>('[data-copy-label]')

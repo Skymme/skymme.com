@@ -564,11 +564,20 @@
               </ol>
 
               <h3 class="col-title">Langues</h3>
-              <dl class="card langs">
-                <div><dt>Français</dt><dd>Langue maternelle</dd></div>
-                <div><dt>Anglais</dt><dd>B2 <span class="pill pill-accent">TOEIC 940 / 990</span></dd></div>
-                <div><dt>Japonais</dt><dd>A1</dd></div>
-              </dl>
+              <div class="card">
+                <dl class="langs">
+                  <div><dt>Français</dt><dd>Langue maternelle</dd></div>
+                  <div><dt>Anglais</dt><dd>B2 <span class="pill pill-accent">TOEIC 940 / 990</span></dd></div>
+                  <div><dt>Japonais</dt><dd>A1</dd></div>
+                </dl>
+                <div class="langs-proof">
+                  <span>Relevé de scores ETS · janvier 2026</span>
+                  <button type="button" class="btn btn-outline btn-sm" commandfor="toeic-dialog" command="show-modal" data-dialog-open="toeic-dialog">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+                    Voir le certificat
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -666,6 +675,28 @@
         </div>
       </section>
     </main>
+
+    <!-- Visionneuse du certificat TOEIC : consultation seule, aucun lien de téléchargement. -->
+    <dialog id="toeic-dialog" class="doc-dialog" aria-labelledby="toeic-dialog-title">
+      <div class="doc-dialog-head">
+        <h2 id="toeic-dialog-title" class="doc-dialog-title">Certificat TOEIC · janvier 2026</h2>
+        <button type="button" class="icon-btn" commandfor="toeic-dialog" command="close" data-dialog-close aria-label="Fermer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="doc-dialog-body">
+        <img
+          src="certificats/toeic-2026.jpg"
+          alt="Relevé de scores TOEIC de Jade Vaillant, test du 22 janvier 2026 : 495 en compréhension orale (niveau C1), 445 en compréhension écrite (B2), total 940 sur 990 (B2)."
+          width="1240"
+          height="1754"
+          loading="lazy"
+          decoding="async"
+          draggable="false"
+        />
+      </div>
+      <p class="doc-dialog-note">Numéro d'identification et QR code masqués.</p>
+    </dialog>
 
     <!-- ═══════════════════════ PIED DE PAGE ═══════════════════════ -->
     <footer class="footer">

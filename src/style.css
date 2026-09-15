@@ -1298,6 +1298,73 @@
     color: var(--text-2);
   }
 
+  .langs-proof {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem 1rem;
+    margin-top: 1.25rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-3);
+    font-size: 0.9rem;
+  }
+
+  /* ── Visionneuse de document ──────────────────────────────── */
+  .doc-dialog {
+    width: min(46rem, calc(100vw - 2rem));
+    max-height: calc(100dvh - 2rem);
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--border-strong);
+    border-radius: 1.25rem;
+    background: var(--surface);
+    color: var(--text);
+    box-shadow: var(--shadow-float);
+  }
+  .doc-dialog[open] {
+    display: flex;
+    flex-direction: column;
+    animation: blur-fade 420ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .doc-dialog::backdrop {
+    background: rgb(5 7 8 / 0.75);
+  }
+  .doc-dialog-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.8rem 0.9rem 0.8rem 1.4rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .doc-dialog-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  .doc-dialog-body {
+    min-height: 0;
+    overflow: auto;
+    padding: 1rem;
+    background: var(--surface-2);
+  }
+  .doc-dialog-body img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+  .doc-dialog-note {
+    padding: 0.7rem 1.4rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-3);
+    font-size: 0.85rem;
+  }
+
   /* ── Compétences : présentées comme les formules du modèle ─── */
   .plans {
     display: grid;
@@ -1510,6 +1577,7 @@
     scroll-behavior: auto;
   }
   .float-badge,
+  .doc-dialog[open],
   .border-beam,
   .hero-copy > *,
   .hero-visual {
